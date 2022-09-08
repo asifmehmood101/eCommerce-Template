@@ -30,8 +30,7 @@
         "eject": "react-scripts eject",
         "storybook": "start-storybook -p 6006 -s public",
         "build-storybook": "build-storybook -s public",
-        "prepare-commit-msg": "commitlint ---edit",
-        "prepare": "husky install & npm run prepare-commit-msg"
+        "prepare": "husky install"
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
