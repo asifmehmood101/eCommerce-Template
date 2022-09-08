@@ -1,0 +1,27 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    },
+    "editor.bracketPairColorization.enabled": true,
+
+    "prettier.configPath": ".prettierrc.json",
+    "prettier.ignorePath": ".prettierignore",
+
+    "eslint.packageManager": "npm",
+    "eslint.format.enable": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown", "jsonc"],
+    "eslint.workingDirectories": [
+        {
+            "mode": "auto"
+        }
+    ],
+    "eslint.run": "onType",
+
+    "jest.showCoverageOnLoad": true,
+    "jest.coverageFormatter": "GutterFormatter",
+    "jest.autoRun": "off",
+    "jest.debugMode": true
+}
