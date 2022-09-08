@@ -30,7 +30,8 @@
         "eject": "react-scripts eject",
         "storybook": "start-storybook -p 6006 -s public",
         "build-storybook": "build-storybook -s public",
-        "prepare": "husky install"
+        "prepare-commit-msg": "commitlint ---edit",
+        "prepare": "husky install & npm run prepare-commit-msg"
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
@@ -64,6 +65,8 @@
         ]
     },
     "devDependencies": {
+        "@commitlint/cli": "^17.1.2",
+        "@commitlint/config-conventional": "^17.1.0",
         "@playwright/test": "^1.25.2",
         "@storybook/addon-actions": "^6.5.10",
         "@storybook/addon-essentials": "^6.5.10",
