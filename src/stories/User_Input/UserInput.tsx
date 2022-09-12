@@ -7,7 +7,7 @@ interface userInputTypes {
     placeholder: string;
     type: string;
     defaultValue?: string | number;
-    label: string;
+    label?: string;
     inputValue: string | number;
     UserInputHandler: () => void;
 }
@@ -48,7 +48,7 @@ const UserInputField = styled(TextField)({
 export function UserInput({ placeholder, type, defaultValue, label, UserInputHandler, inputValue }: userInputTypes) {
     return (
         <InputContainer component="div">
-            <InputLabel component="label">{label}</InputLabel>
+            <InputLabel component="label">{label && label}</InputLabel>
             <UserInputField
                 value={inputValue}
                 type={type}
