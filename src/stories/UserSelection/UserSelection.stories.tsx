@@ -5,7 +5,7 @@ import { UserSelection } from "./UserSelection";
 const MockData = ["Hadi", "Ana", "aysha", "ammi", "asif", "faisal"];
 
 export default {
-    title: "userACtion/UserSelection",
+    title: "userAction/UserSelection",
     component: UserSelection,
 } as ComponentMeta<typeof UserSelection>;
 
@@ -14,6 +14,5 @@ const Template: ComponentStory<typeof UserSelection> = (args) => <UserSelection 
 export const DropDown = Template.bind({});
 
 DropDown.args = {
-    label: "testing",
     listOfData: MockData,
 };
