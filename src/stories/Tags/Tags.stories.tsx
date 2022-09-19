@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof Tags> = (args) => <Tags {...args} />;
 
 export const Tag = Template.bind({});
 Tag.args = {
-    children: "tags",
+    children: "200",
     href: "www.google.com",
     target: "_blank",
     underline: "none",
