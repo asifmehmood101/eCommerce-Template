@@ -12,9 +12,12 @@ interface TagsType {
     hasPadding: boolean;
 }
 
-const StyedTagContainer = styled(Box)<TagsType>(({ hasPadding }) => ({
+const StyedTagContainer = styled(Box)<TagsType>(({ hasPadding, theme }) => ({
     display: "inline-block",
-    padding: hasPadding ? "4px 10px" : "",
+    padding: hasPadding ? "2px 10px" : "1px 8px",
+    borderRadius: "12px",
+    border: "1px solid red",
+    color: theme.palette.primary[main],
 }));
 
 const StyledTags = styled(Link)({
@@ -23,23 +26,25 @@ const StyledTags = styled(Link)({
     fontSize: "0.8rem",
     fontWeight: 600,
     lineHeight: "18px",
+    color: "inherit",
 });
 
 const StyledCloseButton = styled(Button)({
     padding: "0",
     minWidth: "14px",
     marginLeft: "5px",
+    color: "inherit",
 });
 
-export function Tags({ href, target, underline, children, variant, hasPadding, hasIcon, ...rest }: LinkPropsTypes) {
-    const [closeTag, setCloseTag] = React.useState(true);
+export function Tags({ href, target, underline, children, variant, hasPadding, hasIcon, color, ...rest }: LinkPropsTypes) {
+    const [openTag, setOpenTag] = React.useState(true);
 
-    const closeTagHandler = () => setCloseTag(false);
+    const closeTagHandler = () => setOpenTag(false);
 
-    if (closeTag) {
+    if (openTag) {
         return (
             <StyedTagContainer hasPadding={hasPadding}>
-                <StyledTags href={href} target={target} variant={variant} underline={underline} {...rest}>
+                <StyledTags href={href} target={target} variant={variant} underline={underline} {...rest} color={color}>
                     {children}
                 </StyledTags>
                 {hasIcon && (
