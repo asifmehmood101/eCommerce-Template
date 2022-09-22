@@ -1,12 +1,13 @@
 import React from "react";
-import { Checkbox, CheckboxProps, FormControlLabel, FormControlLabelProps } from "@mui/material";
+import { Checkbox, CheckboxProps, FormControlLabel, FormControlLabelProps, Rating } from "@mui/material";
 import { styled } from "@mui/system";
+import { KeyboardDoubleArrowRightSharp } from "@mui/icons-material";
 
 type checkBoxPropsType = CheckboxProps &
     FormControlLabelProps & {
-        label: string | number;
         value: string | number | unknown;
         checkedValue: boolean;
+        checkHandler: () => void;
     };
 
 interface FormControlLabelPropsType {
@@ -24,7 +25,13 @@ const StyledCheckboxContainer = styled(FormControlLabel)<FormControlLabelPropsTy
     },
 }));
 
-export function CheckBox({ label = "HELLO", value, checkedValue, ...rest }: checkBoxPropsType) {
+export function CheckBox({
+    label = <Rating readOnly defaultValue={2.5} precision={0.5} />,
+    value,
+    checkedValue,
+    checkHandler,
+    ...rest
+}: checkBoxPropsType) {
     const [labelStyle, setLabelStyle] = React.useState(false);
 
     const LabelStyleHandler = (event: React.SyntheticEvent<Element, Event>, checked: boolean) => setLabelStyle(checked);
@@ -32,7 +39,7 @@ export function CheckBox({ label = "HELLO", value, checkedValue, ...rest }: chec
     return (
         <>
             <StyledCheckboxContainer
-                control={<Checkbox checked={checkedValue} value={value} {...rest} />}
+                control={<Checkbox checked={checkedValue} value={value} {...rest} onClick={checkHandler} />}
                 label={label}
                 checkedValue={labelStyle}
                 onChange={LabelStyleHandler}
