@@ -4,7 +4,7 @@ import { styled } from "@mui/system";
 
 // types intersection
 type FullButtonType = ButtonProps & {
-    label: string;
+    label?: string;
 };
 
 // styles
@@ -18,6 +18,7 @@ const StyledButton = styled(MuiButton)(({ color, variant }) => ({
     boxShadow: "none",
     "&:hover": {
         boxShadow: "none",
+        background: "transparent",
     },
 
     "&:focus": {
@@ -37,6 +38,7 @@ export function Button({ variant, size, href, color, label, type, disabled, star
             startIcon={startIcon}
             endIcon={endIcon}
             onClick={onClick}
+            disableRipple
         >
             {label}
         </StyledButton>
