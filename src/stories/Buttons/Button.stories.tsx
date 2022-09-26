@@ -15,5 +15,5 @@ export const Primary = Template.bind({});
 Primary.args = {
     variant: "outlined",
     size: "small",
-    label: "Button",
+    children: "Button",
 };

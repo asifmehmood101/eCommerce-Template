@@ -3,10 +3,7 @@ import { Button as MuiButton, ButtonProps } from "@mui/material";
 import { styled } from "@mui/system";
 
 // types intersection
-type FullButtonType = ButtonProps & {
-    label?: string;
-};
-
+type FullButtonType = ButtonProps;
 // styles
 const StyledButton = styled(MuiButton)(({ color, variant }) => ({
     borderRadius: "12px",
@@ -18,7 +15,6 @@ const StyledButton = styled(MuiButton)(({ color, variant }) => ({
     boxShadow: "none",
     "&:hover": {
         boxShadow: "none",
-        background: "transparent",
     },
 
     "&:focus": {
@@ -26,7 +22,7 @@ const StyledButton = styled(MuiButton)(({ color, variant }) => ({
     },
 }));
 
-export function Button({ variant, size, href, color, label, type, disabled, startIcon, endIcon, onClick }: FullButtonType) {
+export function Button({ variant, size, href, color, children, type, disabled, startIcon, endIcon, onClick }: FullButtonType) {
     return (
         <StyledButton
             variant={variant}
@@ -40,7 +36,7 @@ export function Button({ variant, size, href, color, label, type, disabled, star
             onClick={onClick}
             disableRipple
         >
-            {label}
+            {children}
         </StyledButton>
     );
 }
