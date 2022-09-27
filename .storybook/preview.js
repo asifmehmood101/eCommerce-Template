@@ -11,8 +11,9 @@ const theme = createTheme({
         },
 
         tertiary: {
-            light: "#575757",
             main: "#151515",
+            lighter: "#A9A9A9",
+            light: "#575757",
         },
     },
 });

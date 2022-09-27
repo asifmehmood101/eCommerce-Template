@@ -18,4 +18,7 @@ ProductMiniCardDemo.args = {
         imageSrc: "https://unsplash.com/photos/aaxOG66ctCU ",
         imageAlt: "food",
     },
+    rating: 2.5,
+    price: 200,
+    discount: 28,
 };

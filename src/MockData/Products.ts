@@ -9,7 +9,8 @@ export type productsType = {
     price: number;
     description: string;
     Image: imageType;
-    discountedPrice: number;
+    discount: number;
+    rating?: number;
     quantity?: number;
     delivery?: string;
     condition?: string;

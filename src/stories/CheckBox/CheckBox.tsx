@@ -1,7 +1,6 @@
 import React from "react";
 import { Checkbox, CheckboxProps, FormControlLabel, FormControlLabelProps, Rating } from "@mui/material";
 import { styled } from "@mui/system";
-import { KeyboardDoubleArrowRightSharp } from "@mui/icons-material";
 
 type checkBoxPropsType = CheckboxProps &
     FormControlLabelProps & {
